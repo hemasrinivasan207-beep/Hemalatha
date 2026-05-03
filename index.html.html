@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Memory Test 😏 Troll Edition</title>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+<div id="game-root">
+
+  <div class="confetti-wrap" id="confetti"></div>
+  <div class="answer-flash" id="flash"></div>
+
+  <div class="troll-popup" id="troll-popup">
+    <p id="troll-text">Are you SURE? 😈</p>
+    <div class="troll-popup-btns">
+      <button class="troll-yes-btn" id="troll-confirm">Yes, change it!</button>
+      <button class="troll-no-btn" id="troll-keep">Keep my answer</button>
+    </div>
+  </div>
+
+  <svg width="0" height="0">
+    <defs>
+      <linearGradient id="arcGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" stop-color="#ffd93d"/>
+        <stop offset="100%" stop-color="#ff6eb4"/>
+      </linearGradient>
+    </defs>
+  </svg>
+
+  <!-- START SCREEN -->
+  <div class="screen active" id="start-screen">
+    <div class="game-title">Memory Test<br>😏 Troll Edition</div>
+    <p class="subtitle">Can your brain outsmart our tricks? We doubt it. 😈</p>
+    <div class="start-emojis">
+      <span>🍎</span><span>🚗</span><span>🐶</span><span>🏀</span><span>⌚</span>
+    </div>
+    <button class="btn btn-primary" id="start-btn">Play Now 🚀</button>
+    <p class="start-hint">You have 5 seconds to memorize the items</p>
+  </div>
+
+  <!-- MEMORY SCREEN -->
+  <div class="screen" id="memory-screen">
+    <div class="section-label">Memorize these!</div>
+    <div class="memory-heading">🧠 Focus... you've got 5 seconds!</div>
+    <div class="timer-wrap">
+      <svg class="timer-svg" width="72" height="72" viewBox="0 0 80 80">
+        <circle class="timer-bg" cx="40" cy="40" r="35"/>
+        <circle class="timer-arc" id="timer-arc" cx="40" cy="40" r="35"/>
+      </svg>
+      <div class="timer-num" id="timer-num">5</div>
+    </div>
+    <div class="items-grid" id="items-grid"></div>
+  </div>
+
+  <!-- LOADING SCREEN -->
+  <div class="screen" id="loading-screen">
+    <div class="loading-spinner">🌀</div>
+    <div class="memory-heading" style="color:white;margin-top:1rem;">Analyzing your memory...</div>
+    <p class="subtitle">Preparing the traps... 😈</p>
+  </div>
+
+  <!-- QUESTION SCREEN -->
+  <div class="screen" id="question-screen">
+    <div class="progress-bar-wrap">
+      <div class="progress-bar-fill" id="progress-bar" style="width:0%"></div>
+    </div>
+    <div class="q-number" id="q-number">Question 1 of 6</div>
+    <div class="question-card">
+      <span class="question-emoji" id="q-emoji">🤔</span>
+      <div class="question-text" id="q-text">Was there a cat?</div>
+      <div class="troll-tag" id="troll-tag" style="display:none;">⚠️ Tricky!</div>
+    </div>
+    <div class="btn-row">
+      <button class="btn btn-yes" id="yes-btn">✅ Yes</button>
+      <button class="btn btn-no" id="no-btn">❌ No</button>
+    </div>
+  </div>
+
+  <!-- RESULT SCREEN -->
+  <div class="screen" id="result-screen">
+    <div class="result-emoji" id="result-emoji">🎉</div>
+    <div class="stars" id="result-stars">⭐⭐⭐</div>
+    <div class="result-score" id="result-score">5/6</div>
+    <p class="result-msg" id="result-msg">You tried… brain tried less 😄</p>
+    <button class="btn btn-replay" id="replay-btn">🔄 Play Again</button>
+  </div>
+
+</div>
+<script src="script.js"></script>
+</body>
+</html>
